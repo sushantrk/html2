@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+</head>
+
+<body>
+    <img src="" id="flower" width="400" height="400">
+    <script>
+        console.log("about to feach");
+        GetImage().catch(error => {
+            console.log(error);
+        });
+        async function GetImage() {
+            const response = await fetch("child-sad.png");
+            const blob = await response.blob();
+            document.getElementById("flower").src= URL.createObjectURL(blob);
+        }
+
+    </script>
+    <img src="cat.png" />
+</body>
+
+</html>
